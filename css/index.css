@@ -526,16 +526,21 @@
         }
 
         .download-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             font-size: 22px;
             font-weight: 600;
             color: var(--text-dark);
             transition: all 0.4s ease;
             opacity: 1;
+            z-index: 2;
         }
 
         .download-card:hover .download-text {
             opacity: 0;
-            transform: translateY(-20px);
+            transform: translate(-50%, -50%) translateY(-20px);
         }
 
         .download-icon {
@@ -547,11 +552,58 @@
             color: var(--white);
             transition: all 0.4s ease;
             opacity: 0;
+            z-index: 2;
         }
 
         .download-card:hover .download-icon {
             transform: translate(-50%, -50%) scale(1);
             opacity: 1;
+        }
+
+        .download-card.resume-card {
+            background-image: url('../img/이력서.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .download-card.resume-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.75);
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .download-card.resume-card:hover::before {
+            background: rgba(74, 159, 245, 0.9);
+        }
+
+        .download-card.portfolio-card {
+            background-image: url('../img/포트폴리오.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .download-card.portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.75);
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .download-card.portfolio-card:hover::before {
+            background: rgba(74, 159, 245, 0.9);
         }
 
         /* Footer */
