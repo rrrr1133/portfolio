@@ -1,11 +1,22 @@
 
-        // Navbar scroll effect
+        // Navbar scroll effect - hide when reaching About section
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            const aboutSection = document.getElementById('about');
+
+            if (aboutSection) {
+                const aboutTop = aboutSection.offsetTop;
+
+                if (window.scrollY >= aboutTop - 100) {
+                    navbar.classList.add('hidden');
+                } else {
+                    navbar.classList.remove('hidden');
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                }
             }
         });
 
@@ -75,3 +86,42 @@
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
+
+        // Aside navigation active state
+        function updateAsideNavigation() {
+            const sections = document.querySelectorAll('section[id]');
+            const asideLinks = document.querySelectorAll('.aside-link');
+            const asideLogo = document.querySelector('.aside-logo');
+
+            let currentSection = '';
+            const scrollPosition = window.scrollY + 200;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            // Update aside links
+            asideLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Update aside logo for home section
+            if (asideLogo) {
+                if (currentSection === 'home') {
+                    asideLogo.classList.add('active');
+                } else {
+                    asideLogo.classList.remove('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', updateAsideNavigation);
+        updateAsideNavigation(); // Initial check
