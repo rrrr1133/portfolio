@@ -379,30 +379,31 @@
 
         /* About Section */
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
+            display: block;
+        }
+
+        .unified-card {
+            display: flex;
+            align-items: center;
             gap: 60px;
-            align-items: stretch;
-        }
-
-        .profile-card {
-            background: var(--white);
-            padding: 40px;
+            background: var(--light-blue);
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
+            border-left: 6px solid var(--primary-blue);
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
         }
 
-        .profile-card:hover {
-            transform: translateY(-10px);
+        .unified-profile {
+            flex-shrink: 0;
+            width: 260px;
+            text-align: center;
         }
 
         .profile-image {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            margin: 0 auto 40px;
+            margin: 0 auto 24px;
             border: 5px solid var(--primary-blue);
             overflow: hidden;
         }
@@ -413,15 +414,21 @@
             object-fit: cover;
         }
 
+        .profile-name {
+            font-size: 22px;
+            margin-bottom: 0;
+            color: var(--text-dark);
+        }
+
         .info-table {
             text-align: left;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .info-row {
             display: flex;
-            padding: 18px 0;
-            border-bottom: 1px solid #eee;
+            padding: 11px 0;
+            border-bottom: 1px solid rgba(74, 159, 245, 0.2);
         }
 
         .info-row:last-child {
@@ -431,60 +438,57 @@
         .info-label {
             color: var(--primary-blue);
             font-weight: 600;
-            min-width: 100px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            min-width: 80px;
+            font-size: 14px;
         }
 
         .info-value {
             color: var(--text-dark);
+            font-size: 14px;
         }
 
-        .about-text h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: var(--text-dark);
+        .unified-divider {
+            width: 1px;
+            align-self: stretch;
+            background: rgba(74, 159, 245, 0.3);
+            flex-shrink: 0;
         }
 
-        .about-text p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: var(--text-light);
-            margin-bottom: 20px;
+        .unified-education {
+            flex: 1;
         }
 
-        .highlight-box {
-            background: var(--light-blue);
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 30px;
-            border-left: 5px solid var(--primary-blue);
-        }
-
-        .highlight-box h3 {
+        .unified-education h3 {
             color: var(--primary-blue);
-            margin-bottom: 15px;
+            font-size: 20px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .highlight-box ul {
+        .unified-education ul {
             list-style: none;
             padding-left: 0;
         }
 
-        .highlight-box li {
-            padding: 8px 0;
+        .unified-education li {
+            padding: 13px 0;
             color: var(--text-dark);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            border-bottom: 1px solid rgba(74, 159, 245, 0.15);
+            font-size: 15px;
         }
 
-        .highlight-box li i {
+        .unified-education li:last-child {
+            border-bottom: none;
+        }
+
+        .unified-education li i {
             color: var(--primary-blue);
+            flex-shrink: 0;
         }
 
         /* Skills Section */
@@ -915,9 +919,20 @@
                 font-size: 32px;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
+            .unified-card {
+                flex-direction: column;
+                padding: 30px;
                 gap: 30px;
+            }
+
+            .unified-profile {
+                width: 100%;
+            }
+
+            .unified-divider {
+                width: 100%;
+                height: 1px;
+                align-self: auto;
             }
 
             .contact-content {
