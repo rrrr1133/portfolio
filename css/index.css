@@ -402,7 +402,7 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
             border: 5px solid var(--primary-blue);
             overflow: hidden;
         }
@@ -415,12 +415,12 @@
 
         .info-table {
             text-align: left;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .info-row {
             display: flex;
-            padding: 12px 0;
+            padding: 18px 0;
             border-bottom: 1px solid #eee;
         }
 
