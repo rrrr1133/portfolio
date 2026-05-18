@@ -668,9 +668,8 @@
         }
 
         .download-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            display: flex;
+            align-items: stretch;
         }
 
         .download-card {
@@ -686,6 +685,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex: 1;
             min-height: 150px;
         }
 
