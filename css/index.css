@@ -953,7 +953,13 @@
 
             .video-frame {
                 max-width: 100%;
-                aspect-ratio: 3/4;
+                aspect-ratio: auto;
+                border-radius: 14px;
+            }
+
+            .hero-video {
+                object-fit: contain;
+                background: var(--text-dark);
             }
 
             .hero-content {
