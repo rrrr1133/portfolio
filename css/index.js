@@ -76,12 +76,13 @@
 
         animateSkillBars();
 
-        // 모바일(768px 이하)에서는 영상 자동재생 중지
-        const heroVideo = document.querySelector('.hero-video');
-        if (heroVideo && window.innerWidth <= 768) {
-            heroVideo.removeAttribute('autoplay');
-            heroVideo.pause();
-        }
+        // 데스크탑(769px 이상)에서만 영상 자동재생
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroVideo = document.querySelector('.hero-video');
+            if (heroVideo && window.innerWidth > 768) {
+                heroVideo.play();
+            }
+        });
 
         // Add hover effect to project cards
         document.querySelectorAll('.project-card').forEach(card => {
