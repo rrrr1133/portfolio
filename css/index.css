@@ -554,8 +554,36 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: 1fr;
             gap: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .portfolio-link-card {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .portfolio-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 24px;
+            padding: 12px 24px;
+            background: var(--primary-blue);
+            color: #fff;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .portfolio-link-card:hover .portfolio-link-btn {
+            background: var(--dark-blue);
+            transform: translateX(4px);
         }
 
         .project-card {
@@ -836,16 +864,64 @@
         }
 
         /* Responsive Design */
+
+        /* ── 태블릿 (1024px 이하) ── */
         @media (max-width: 1024px) {
+            .aside-navigation {
+                right: 14px;
+                gap: 10px;
+                padding: 12px;
+            }
+
+            .aside-logo {
+                width: 58px;
+                height: 58px;
+            }
+
+            .hero {
+                padding: 90px 40px 50px;
+            }
+
             .hero-container {
                 gap: 50px;
             }
 
             .hero-content h1 {
-                font-size: 56px;
+                font-size: 54px;
+            }
+
+            .hero-content .subtitle {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 80px 40px;
+            }
+
+            .unified-card {
+                gap: 40px;
+                padding: 40px;
+            }
+
+            .unified-profile {
+                width: 220px;
+            }
+
+            .contact-content {
+                gap: 40px;
+            }
+
+            .contact-info {
+                padding: 30px;
+            }
+
+            .contact-item {
+                padding: 16px;
+                gap: 16px;
             }
         }
 
+        /* ── 모바일 (768px 이하) ── */
         @media (max-width: 768px) {
             .aside-navigation {
                 display: none;
@@ -854,6 +930,7 @@
             nav ul {
                 padding: 12px 0;
                 flex-wrap: wrap;
+                gap: 0;
             }
 
             nav ul li {
@@ -864,13 +941,14 @@
                 font-size: 13px;
             }
 
+            /* Hero */
             .hero {
                 padding: 80px 20px 40px;
             }
 
             .hero-container {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 32px;
             }
 
             .video-frame {
@@ -879,58 +957,91 @@
             }
 
             .hero-content {
-                padding: 20px 0;
+                padding: 16px 0;
                 text-align: left;
             }
 
             .hero-content .greeting {
-                font-size: 18px;
+                font-size: 17px;
             }
 
             .hero-content h1 {
-                font-size: 42px;
+                font-size: 38px;
                 letter-spacing: -1px;
+                margin-bottom: 20px;
             }
 
             .hero-content .subtitle {
-                font-size: 16px;
+                font-size: 15px;
+                margin-bottom: 28px;
             }
 
             .hero-info {
-                margin-bottom: 30px;
+                gap: 14px;
+                margin-bottom: 28px;
             }
 
             .hero-info-item {
-                font-size: 14px;
+                font-size: 13px;
             }
 
             .hero-info-item i {
-                font-size: 18px;
+                font-size: 16px;
             }
 
             .cta-button {
-                padding: 15px 35px;
-                font-size: 16px;
+                padding: 14px 30px;
+                font-size: 15px;
                 width: 100%;
                 justify-content: center;
             }
 
+            /* Common */
             section {
-                padding: 60px 20px;
+                padding: 56px 20px;
             }
 
             .section-title {
-                font-size: 32px;
+                font-size: 28px;
+                margin-bottom: 36px;
             }
 
+            /* About */
             .unified-card {
                 flex-direction: column;
-                padding: 30px;
-                gap: 30px;
+                padding: 24px;
+                gap: 24px;
             }
 
             .unified-profile {
                 width: 100%;
+            }
+
+            .profile-image {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 16px;
+            }
+
+            .profile-name {
+                font-size: 19px;
+            }
+
+            .info-table {
+                margin-top: 14px;
+            }
+
+            .info-row {
+                padding: 9px 0;
+            }
+
+            .info-label {
+                min-width: 65px;
+                font-size: 13px;
+            }
+
+            .info-value {
+                font-size: 13px;
             }
 
             .unified-divider {
@@ -939,14 +1050,129 @@
                 align-self: auto;
             }
 
+            .unified-education h3 {
+                font-size: 16px;
+                margin-bottom: 14px;
+            }
+
+            .unified-education h3:not(:first-child) {
+                margin-top: 22px;
+            }
+
+            .unified-education li {
+                font-size: 13px;
+                padding: 10px 0;
+            }
+
+            /* Contact */
             .contact-content {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 24px;
+            }
+
+            .contact-info {
+                padding: 24px;
+            }
+
+            .contact-item {
+                padding: 14px;
+                gap: 12px;
+                margin-bottom: 14px;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+                flex-shrink: 0;
+            }
+
+            .contact-details h3 {
+                font-size: 13px;
+            }
+
+            .contact-details p {
+                font-size: 15px;
+            }
+
+            .download-card {
+                padding: 30px 20px;
+                min-height: 120px;
+            }
+
+            /* Portfolio card */
+            .project-image {
+                height: 200px;
+                font-size: 56px;
+            }
+
+            .project-content {
+                padding: 24px;
+            }
+
+            .project-content h3 {
+                font-size: 20px;
+            }
+
+            .portfolio-link-btn {
+                width: 100%;
+                justify-content: center;
+                margin-top: 20px;
             }
 
             .skills-grid,
             .projects-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Footer */
+            footer {
+                padding: 30px 16px;
+            }
+
+            .social-links {
+                gap: 12px;
+                margin-bottom: 16px;
+            }
+
+            .social-links a {
+                width: 42px;
+                height: 42px;
+                font-size: 18px;
+            }
+        }
+
+        /* ── 소형 모바일 (480px 이하) ── */
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            nav ul li {
+                margin: 0 7px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .unified-card {
+                padding: 20px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .hero-info {
+                flex-direction: column;
+                gap: 10px;
             }
         }
 
