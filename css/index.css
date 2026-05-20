@@ -609,6 +609,36 @@
             justify-content: center;
             color: var(--white);
             font-size: 72px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image.mosaic-bg {
+            background: none;
+        }
+
+        .mosaic-grid {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 2px;
+            filter: blur(4px) brightness(1.1);
+            transform: scale(1.04);
+        }
+
+        .mosaic-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .mosaic-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.25);
         }
 
         .project-content {
