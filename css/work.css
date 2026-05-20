@@ -127,6 +127,45 @@
     letter-spacing: 0.5px;
 }
 
+/* SNS / Blog Links */
+.work-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.work-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.work-link:hover {
+    background: #4A9FF5;
+    transform: translateY(-1px);
+}
+
+.work-link--insta {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: #fff;
+}
+
+.work-link--insta:hover {
+    opacity: 0.85;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    transform: translateY(-1px);
+}
+
 /* Right: Photos */
 .work-photos-col {
     display: grid;
