@@ -384,7 +384,7 @@
 
         .unified-card {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 60px;
             background: var(--light-blue);
             border-radius: 20px;
@@ -465,6 +465,10 @@
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .unified-education h3:not(:first-child) {
+            margin-top: 32px;
         }
 
         .unified-education ul {
