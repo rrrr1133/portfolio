@@ -84,14 +84,6 @@
 
 ---
 
-## Portfolio Link
-
-포트폴리오 바로가기  
-(링크 삽입)
-
----
-
 ## Contact
 
-- GitHub
-- Email
+- Email : rock0113@khu.ac.kr
